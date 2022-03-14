@@ -1,0 +1,272 @@
+body {
+  background: rgba(25, 37, 51, 255);
+  margin: 0;
+  align-items: center;
+}
+
+.starter {
+  position: absolute;
+  width: 100%;
+  height: 123%;
+  padding: 0;
+  margin: 0;
+  background: url(background.jpg) center/cover no-repeat;
+}
+
+/* NAVBAR */
+
+ul.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  background: rgba(204, 204, 204, 0.2);
+  margin: 0px;
+  text-align: -webkit-center;
+  z-index: 1;
+}
+
+ul.navbar li {
+  display: inline;
+  margin: 15px;
+  font-size: 28px;
+  font-family: georgia, serif;
+}
+
+.bag-icon {
+  position: absolute;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.user-icon {
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.bogo {
+  background-color: rgba(25, 37, 51, 255);
+  color: #fff6e2;
+  margin: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  border-radius: 4px;
+}
+
+.photo-collection {
+  vertical-align: middle;
+  line-height: 80%;
+  padding-bottom: 7px;
+  color: rgb(255 246 226);
+  display: inline-flex;
+  font-size: 24px;
+  text-align: left;
+  font-variant: small-caps;
+}
+
+.bag-items {
+  position: relative;
+  left: 25px;
+  bottom: 3px;
+  transform: scale(0.7);
+  font-size: smaller;
+  background: rgb(203, 130, 36);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: white;
+  font-family: "Lato", sans-serif;
+  cursor: pointer;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* SHOPPING BAG BUTTON */
+
+.bag-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  background: rgb(203, 130, 36, 0.2);
+  z-index: 2;
+}
+
+.bag {
+  display: grid;
+  grid-template: 100px / 500px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 29%;
+  height: 100%;
+  overflow: scroll;
+  z-index: 3;
+  background: rgb(203, 130, 36);
+  padding: 20px 20px 20px;
+  transition: 0.8s;
+  padding-top: 20px;
+}
+
+.show-bag {
+  transform: translateX(0);
+}
+
+.hide-bag {
+  transform: translateX(100%);
+}
+
+.close-bag {
+  width: 25px;
+  height: 25px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding-left: 490px;
+}
+
+.bag h2 {
+  display: grid;
+  width: 65%;
+  color: black;
+  padding: 20px 100px;
+  top: 0;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+.bag-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 0 1.5rem;
+  /* display: none; */
+}
+
+.bag-item img {
+  padding: 20px 5px 20px;
+  width: 80px;
+}
+
+.bag-item-text h3 {
+  margin-bottom: -15px;
+}
+
+.remove-item {
+  color: #efd3a9;
+  cursor: pointer;
+}
+
+.fa-chevron-up,
+.fa-chevron-down {
+  color: #efd3a9;
+  cursor: pointer;
+  font-size: large;
+}
+
+.item-amount {
+  text-align: center;
+}
+
+.bag-footer {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.3em;
+  padding-bottom: 30px;
+}
+
+.clear-bag {
+  background-color: #efd3a9;
+  color: rgb(203, 130, 36);
+  width: 35%;
+  height: 27%;
+  font-size: 1.1em;
+  font-family: "Lato", sans-serif;
+  font-variant: small-caps;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 0px solid;
+}
+
+.clear-bag:hover {
+  background-color: rgb(203, 130, 36);
+  color: #efd3a9;
+  transition-duration: 0.3s;
+  border: rgb(203, 130, 36);
+}
+
+/* PRODUCTS */
+
+h2 {
+  position: absolute;
+  color: rgb(203, 130, 36);
+  top: 135%;
+  padding-left: 46%;
+  font-variant: small-caps;
+  font-size: 3em;
+}
+
+.prints-grid {
+  display: inline-grid;
+  align-content: space-evenly;
+  justify-content: center;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 100px;
+  padding: 73% 0 10% 13%;
+  max-width: 1400px;
+}
+
+.print-single {
+  grid-column: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.print-single:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.3s;
+  border-radius: 5px;
+}
+
+.print-single img {
+  height: 400px;
+}
+
+.bag-btn {
+  position: absolute;
+  top: 75%;
+  right: 0;
+  /* background: rgb(203, 130, 36); */
+  background-color: rgb(0 0 0 / 30%);
+  color: #fff6e2;
+  border: none;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  font-weight: bold;
+  transition: 0.4s;
+  transform: translateX(101%);
+  cursor: pointer;
+}
+
+.print-single:hover .bag-btn {
+  transform: translateX(0);
+}
+
+.print-name {
+  color: rgb(203, 130, 36);
+  font-style: italic;
+  font-size: large;
+}
+
+.price {
+  font-style: normal;
+  font-weight: bold;
+  font-size: medium;
+  color: #fff6e2;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BOGO Photography</title>
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web\css\all.css" />
+  </head>
+
+  <body>
+    <!-- background -->
+    <div class="starter"></div>
+
+    <!-- navbar -->
+    <div class="navbar">
+      <ul class="navbar sticky">
+        <li><i class="user-icon fas fa-user"></i></li>
+        <li>
+          <span class="bogo"> <strong> BOGO</strong> </span>
+          <span class="photo-collection"
+            >photography <br />
+            collection</span
+          >
+        </li>
+        <li>
+          <i class="bag-icon fas fa-shopping-bag"></i>
+          <div class="bag-items">0</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- prints -->
+    <div class="prints">
+      <h2>our prints</h2>
+
+      <div class="prints-grid">
+        <!-- print 1 -->
+        <div class="print-single">
+          <img
+            src="print1.jpg"
+            title="Victoria"
+            alt="girl with curly hair and blue eyes"
+          />
+
+          <figcaption class="print-name">
+            Victoria
+            <br />
+            <span class="price">BGN 23,99</span>
+          </figcaption>
+
+          <button class="bag-btn" id="0">
+            <i class="fas fa-shopping-bag"></i>
+            &nbspadd to bag
+          </button>
+        </div>
+
+        <!-- print 2 -->
+        <div class="print-single">
+          <img
+            src="print2.jpg"
+            title="Angelica"
+            alt="girl with red lipstick in purple top and leather pants"
+          />
+
+          <figcaption class="print-name">
+            Angelica
+            <br />
+            <span class="price">BGN 21,99</span>
+          </figcaption>
+
+          <button class="bag-btn" id="1">
+            <i class="fas fa-shopping-bag"></i>
+            &nbspadd to bag
+          </button>
+        </div>
+
+        <!-- print 3 -->
+        <div class="print-single">
+          <img src="print3.jpg" title="Hrisi" alt="girl in orange top" />
+
+          <figcaption class="print-name">
+            Hrisi
+            <br />
+            <span class="price">BGN 25,99</span>
+          </figcaption>
+
+          <button class="bag-btn" id="2">
+            <i class="fas fa-shopping-bag"></i>
+            &nbspadd to bag
+          </button>
+        </div>
+
+        <!-- print 4 -->
+        <div class="print-single">
+          <img
+            src="print4.jpg"
+            title="Gabriella"
+            alt="girl in princess dress"
+          />
+
+          <figcaption class="print-name">
+            Gabriella
+            <br />
+            <span class="price">BGN 19,99</span>
+          </figcaption>
+
+          <button class="bag-btn" id="3">
+            <i class="fas fa-shopping-bag"></i>
+            &nbspadd to bag
+          </button>
+        </div>
+      </div>
+
+      <!-- shopping bag -->
+      <div class="bag-overlay hide-bag"></div>
+      <div class="bag hide-bag">
+        <h2>Your Shopping Bag</h2>
+        <i class="close-bag fas fa-window-close"></i>
+        <div class="bag-content">
+          <!-- bag items -->
+
+          <!-- rendered products -->
+          <div class="bag-item"></div>
+          <div class="bag-footer">
+            <h3>is empty</h3>
+            <!-- <button class="clear-bag">clear bag</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- js -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -9,7 +9,7 @@ const bagOverlay = document.querySelector(".bag-overlay");
 const contentBagEl = document.querySelector(".bag-content");
 const contentEl = document.querySelector(".bag-item");
 const bagItemsCounter = document.querySelector(".bag-items");
-const subtotalEl = document.querySelector(".bag-footer");
+const subtotalEl = document.querySelector(".footer");
 const printBtns = document.querySelectorAll(".bag-btn");
 const clearBagEl = document.querySelector(".clear-bag");
 
@@ -117,35 +117,50 @@ function renderSubtotal() {
 
   if (totalItems === 0) {
     bagItemsCounter.innerHTML = 0;
-    subtotalEl.innerHTML = `<h3>is empty</h3>`;
+    subtotalEl.innerHTML = `
+    <div class="footer">
+      <div class="empty-bag">
+        <img src="emptybag.png" ; />
+      </div>
+      <div class="bag-footer">
+        <h3>is empty</h3>
+      </div>
+    </div>
+    `;
   } else {
-    subtotalEl.innerHTML = `<h4>your total (${totalItems} ${
-      totalItems === 1 ? "item" : "items"
-    }):</h4> <h3>BGN <span class="bag-total">${totalPrice.toFixed(
-      2
-    )}</span></h3>
-  <button class="clear-bag" onclick="clearBagBtn()">clear bag</button>`;
+    subtotalEl.innerHTML = `
+    <div class="footer-title">
+      <h4>your total (${totalItems} ${totalItems === 1 ? "item" : "items"}): 
+      </h4> 
+      <h3>BGN <span class="bag-total">${totalPrice.toFixed(2)}</span></h3>
+    </div>
+    <button class="clear-bag" onclick="clearBagBtn()">clear bag</button>`;
+
     bagItemsCounter.innerHTML = `${totalItems}`;
   }
 }
 
 //RENDER BAG ITEMS
 function renderBagItems() {
-  contentEl.innerHTML = ""; //clear bag element
+  contentBagEl.innerHTML = ""; //clear bag element
 
   bagArr.forEach((item) => {
-    contentEl.innerHTML += `
-              <img src="${item.imgSrc}" alt="${item.name}" />
-              <div class="bag-item-text">
-                <h3>${item.name}</h3>
-                <h4>${item.price}</h4>
-                <span class="remove-item" onclick="removeItemFromBag(${item.id})">remove</span>
-              </div>
-              <div class="bag-item-amount">
-                <i class="fas fa-chevron-up" onclick="changeCounter('plus', ${item.id})"></i>
-                <div class="item-amount">${item.counter}</div>
-                <i class="fas fa-chevron-down" onclick="changeCounter('minus', ${item.id})"></i>
-            </div>`;
+    contentBagEl.innerHTML += `
+      <div class="bag-item">
+        <div class="img-and-name">
+          <img src="${item.imgSrc}" alt="${item.name}" />
+          <div class="bag-item-text">
+            <h3>${item.name}</h3>
+            <h4>${item.price}</h4>
+            <span class="remove-item" onclick="removeItemFromBag(${item.id})">remove</span>
+          </div>
+        </div>
+        <div class="bag-item-amount">
+          <i class="fas fa-chevron-up" onclick="changeCounter('plus', ${item.id})"></i>
+          <div class="item-amount">${item.counter}</div>
+          <i class="fas fa-chevron-down" onclick="changeCounter('minus', ${item.id})"></i>
+        </div>
+      </div>`;
   });
 }
 
@@ -184,6 +199,7 @@ printBtns.forEach((print) =>
 function renderPrints() {
   prints.forEach((print) => {
     contentBagEl.innerHTML += `
+
               <img src="${print.imgSrc}" alt="${print.name}" />
               <div class="bag-item-text">
                 <h3>${print.name}</h3>

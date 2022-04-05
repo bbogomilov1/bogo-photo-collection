@@ -33,12 +33,38 @@
       </ul>
     </div>
 
+    <div class="user-box sticky">
+      <form autocomplete="on">
+        <label for="uname"><b>username</b></label>
+        <br />
+        <input
+          type="text"
+          class="input"
+          placeholder="Enter Username"
+          name="uname"
+          required
+        />
+        <br />
+        <label for="psw"><b>password</b></label>
+        <br />
+        <input
+          type="password"
+          class="input"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+        <br />
+        <button type="submit" class="btn submit">login</button>
+        <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+      </form>
+    </div>
+
     <!-- prints -->
     <div class="prints">
       <div class="header-print">
         <h2>our prints</h2>
       </div>
-
       <div class="prints-grid">
         <!-- print 1 -->
         <div class="print-single">
@@ -63,6 +89,7 @@
         <!-- print 2 -->
         <div class="print-single">
           <img
+            id="angelica"
             src="print2.jpg"
             title="Angelica"
             alt="girl with red lipstick in purple top and leather pants"

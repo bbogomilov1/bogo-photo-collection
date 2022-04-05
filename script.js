@@ -134,7 +134,7 @@ function renderSubtotal() {
       </h4> 
       <h3>BGN <span class="bag-total">${totalPrice.toFixed(2)}</span></h3>
     </div>
-    <button class="clear-bag" onclick="clearBagBtn()">clear bag</button>`;
+    <button class="btn clear-bag" style="border: 1px solid black" onclick="clearBagBtn()">clear bag</button>`;
 
     bagItemsCounter.innerHTML = `${totalItems}`;
   }
@@ -230,3 +230,13 @@ function clearBagBtn() {
 
   bagItemsCounter.innerHTML = 0;
 }
+
+const userIcon = document.querySelector(".user-icon");
+const user = document.querySelector(".user-box");
+
+//SHOW AND HIDE USER BOX
+
+userIcon.addEventListener("click", function (e) {
+  user.classList.add("animate");
+  user.classList.toggle("show-user");
+});

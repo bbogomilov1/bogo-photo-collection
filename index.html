@@ -13,7 +13,22 @@
 
   <body>
     <!-- background -->
-    <div class="starter"></div>
+    <div class="starter">
+      <!-- order now -->
+      <div class="order-now-container">
+        <div class="order-now">
+          <button type="order" class="btn-order">
+            <span class="arrow bounce">
+              <a class="fa fa-arrow-down fa-2x" href="#"></a>
+            </span>
+            <a href="#header-print" class="pulsate">order now</a>
+            <span class="arrow bounce">
+              <a class="fa fa-arrow-down fa-2x" href="#"></a>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- navbar -->
     <div class="navbar">
@@ -33,38 +48,39 @@
       </ul>
     </div>
 
-    <div class="user-box sticky">
-      <form autocomplete="on">
-        <label for="uname"><b>username</b></label>
-        <br />
-        <input
-          type="text"
-          class="input"
-          placeholder="Enter Username"
-          name="uname"
-          required
-        />
-        <br />
-        <label for="psw"><b>password</b></label>
-        <br />
-        <input
-          type="password"
-          class="input"
-          placeholder="Enter Password"
-          name="psw"
-          required
-        />
-        <br />
-        <button type="submit" class="btn submit">login</button>
-        <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
-      </form>
+    <!-- user box -->
+    <div class="user-container">
+      <div class="user-box sticky">
+        <i class="close-user-box fas fa-window-close"></i>
+        <form autocomplete="on">
+          <label for="uname"><b>username</b></label>
+          <br />
+          <input
+            type="text"
+            class="input"
+            placeholder="Enter Username"
+            name="uname"
+            required
+          />
+          <br />
+          <label for="psw"><b>password</b></label>
+          <br />
+          <input
+            type="password"
+            class="input"
+            placeholder="Enter Password"
+            name="psw"
+            required
+          />
+          <br />
+          <button type="submit" class="btn submit">login</button>
+        </form>
+      </div>
     </div>
 
     <!-- prints -->
     <div class="prints">
-      <div class="header-print">
-        <h2>our prints</h2>
-      </div>
+      <a id="header-print">our prints</a>
       <div class="prints-grid">
         <!-- print 1 -->
         <div class="print-single">

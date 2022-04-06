@@ -1,6 +1,12 @@
 "use strict";
 
 //SELECTED ELEMENTS
+const btnOrder = document.querySelector(".btn-order");
+
+const userIcon = document.querySelector(".user-icon");
+const user = document.querySelector(".user-box");
+const closeUserBox = document.querySelector(".close-user-box");
+
 const bag = document.querySelector(".bag");
 const openBag = document.querySelector(".bag-icon");
 const closeBag = document.querySelector(".close-bag");
@@ -12,6 +18,22 @@ const bagItemsCounter = document.querySelector(".bag-items");
 const subtotalEl = document.querySelector(".footer");
 const printBtns = document.querySelectorAll(".bag-btn");
 const clearBagEl = document.querySelector(".clear-bag");
+
+//ORDER NOW BUTTON
+btnOrder.addEventListener("click", function (e) {
+  e.preventDefault();
+  const id = e.target.getAttribute("href");
+  document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+});
+
+//SHOW AND HIDE USER BOX
+const toggleUserBox = function () {
+  user.classList.add("animate");
+  user.classList.toggle("show-user");
+};
+
+userIcon.addEventListener("click", toggleUserBox);
+closeUserBox.addEventListener("click", toggleUserBox);
 
 //PRINTS ARRAY
 const options = {
@@ -152,7 +174,9 @@ function renderBagItems() {
           <div class="bag-item-text">
             <h3>${item.name}</h3>
             <h4>${item.price}</h4>
-            <span class="remove-item" onclick="removeItemFromBag(${item.id})">remove</span>
+            <span class="remove-item" onclick="removeItemFromBag(${item.id})">
+              <i class="fas fa-trash"></i>
+            </span>
           </div>
         </div>
         <div class="bag-item-amount">
@@ -230,13 +254,3 @@ function clearBagBtn() {
 
   bagItemsCounter.innerHTML = 0;
 }
-
-const userIcon = document.querySelector(".user-icon");
-const user = document.querySelector(".user-box");
-
-//SHOW AND HIDE USER BOX
-
-userIcon.addEventListener("click", function (e) {
-  user.classList.add("animate");
-  user.classList.toggle("show-user");
-});

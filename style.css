@@ -26,7 +26,6 @@ body {
   font-size: 3.2em;
   font-family: georgia, serif;
   font-variant: small-caps;
-  cursor: pointer;
   background: rgba(204, 204, 204, 0.1);
   backdrop-filter: blur(4.7px);
   box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
@@ -508,7 +507,6 @@ label {
 }
 
 .print-single:hover {
-  cursor: pointer;
   transform: scale(1.1);
   transition: transform 0.3s;
   border-radius: 5px;

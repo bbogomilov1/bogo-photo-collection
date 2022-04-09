@@ -2,6 +2,8 @@
 
 //SELECTED ELEMENTS
 const btnOrder = document.querySelector(".btn-order");
+const orderText = document.querySelector(".order-text");
+const arrow = document.querySelector(".arrow");
 
 const userIcon = document.querySelector(".user-icon");
 const user = document.querySelector(".user-box");
@@ -16,15 +18,8 @@ const contentBagEl = document.querySelector(".bag-content");
 const contentEl = document.querySelector(".bag-item");
 const bagItemsCounter = document.querySelector(".bag-items");
 const subtotalEl = document.querySelector(".footer");
-const printBtns = document.querySelectorAll(".bag-btn");
+const printSingle = document.querySelectorAll(".print-single");
 const clearBagEl = document.querySelector(".clear-bag");
-
-//ORDER NOW BUTTON
-btnOrder.addEventListener("click", function (e) {
-  e.preventDefault();
-  const id = e.target.getAttribute("href");
-  document.querySelector(id).scrollIntoView({ behavior: "smooth" });
-});
 
 //SHOW AND HIDE USER BOX
 const toggleUserBox = function () {
@@ -208,7 +203,7 @@ function changeCounter(action, id) {
   updateBag();
 }
 
-printBtns.forEach((print) =>
+printSingle.forEach((print) =>
   print.addEventListener("click", () => {
     bagOverlay.classList.remove("hide-bag");
     bagOverlay.classList.add("show-bag");

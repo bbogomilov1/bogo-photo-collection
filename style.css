@@ -3,6 +3,10 @@
   --blue: rgba(25, 37, 51, 255);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--blue);
   margin: 0;
@@ -16,14 +20,19 @@ body {
 }
 
 .order-now-container {
-  text-align: center;
-  padding-top: 15%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-order {
-  height: 250px;
-  width: 650px;
-  font-size: 3.2em;
+  text-align: center;
+  width: 450px;
+  top: 30%;
+  position: absolute;
+  text-decoration: none;
+  padding: 100px 115px;
+  font-size: 3em;
   font-family: georgia, serif;
   font-variant: small-caps;
   background: rgba(204, 204, 204, 0.1);
@@ -32,7 +41,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.btn-order a {
+.btn-order > span {
   color: white;
   text-decoration: none;
 }
@@ -57,7 +66,7 @@ body {
 
 .arrow {
   text-align: center;
-  margin: 8% 4%;
+  margin: 0 2%;
   display: inline-block;
   font-size: 15px;
 }
@@ -500,6 +509,7 @@ label {
 }
 
 .print-single {
+  cursor: pointer;
   grid-column: 1rem;
   position: relative;
   overflow: hidden;
